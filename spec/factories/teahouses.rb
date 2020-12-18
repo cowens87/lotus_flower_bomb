@@ -1,9 +1,9 @@
 FactoryBot.define do
-  factory :teahouse do
-    name { "MyString" }
-    address { "MyString" }
-    city { "MyString" }
-    state { "MyString" }
-    zip { 1 }
+  factory :teahouse do 
+    name    {"#{Faker::TvShows::RickAndMorty.character} Tea Lounge"}
+    address {"#{Faker::Number.number(digits: 5)} #{Faker::TvShows::RickAndMorty.location}"}
+    city    {Faker::Address.city}
+    state   {Faker::Address.state_abbr}
+    zip     {Faker::Address.zip}
   end
-end
+end 
