@@ -1,0 +1,9 @@
+<h1>All Teahouses</h1>
+
+<%= link_to 'New Teahouse', new_teahouse_path %>
+
+<% @teahouses.each do |teahouse| %>
+  <section id="teahouse-<%=teahouse.id%>">
+    <h3><%= link_to "#{teahouse.name}", "teahouses/#{teahouse.id}" %></h3>
+  </section>
+<% end %>

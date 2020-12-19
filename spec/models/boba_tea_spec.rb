@@ -6,10 +6,9 @@ RSpec.describe BobaTea, type: :model do
   end 
 
   describe 'validations' do
-    it { should validate_presence_of :image}
     it { should validate_presence_of :name}
     it { should validate_presence_of :price}
-    it { should validate_presence_of :type}
+    it { should validate_presence_of :base}
     it { should validate_presence_of :description}
   end
 
