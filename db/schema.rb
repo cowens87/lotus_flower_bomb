@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_204044) do
+ActiveRecord::Schema.define(version: 2020_12_18_203924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_12_18_204044) do
     t.string "image"
     t.string "name"
     t.float "price"
-    t.string "type"
+    t.string "base"
     t.integer "purchasable", default: 0
     t.string "description"
     t.bigint "teahouse_id"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_204044) do
     t.integer "zip"
     t.string "reason"
     t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "teahouses", force: :cascade do |t|
@@ -49,8 +51,6 @@ ActiveRecord::Schema.define(version: 2020_12_18_204044) do
     t.string "city"
     t.string "state"
     t.integer "zip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "boba_tea_requests", "boba_teas"

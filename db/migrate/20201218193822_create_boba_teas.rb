@@ -1,10 +1,10 @@
 class CreateBobaTeas < ActiveRecord::Migration[5.2]
   def change
     create_table :boba_teas do |t|
-      t.string :image
+      t.string :image, allow: :null
       t.string :name
       t.float :price
-      t.string :type
+      t.string :base
       t.integer :purchasable, :default => 0
       t.string :description
       t.references :teahouse, foreign_key: true

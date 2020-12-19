@@ -1,5 +1,4 @@
 # README
-
 # Lotus Flower Bomb
 
 In this project, students will build upon the code in this repo to create a Tea Ordering Platform. Customers will be able to apply to buy teas, and Admins will be able to approve or reject applications and see statistics for the Teahousees, Teas, and Applications in the system.
@@ -34,7 +33,9 @@ You can create as many columns on each table as you would like, but we need a fe
     3. Two DateTime columns
 
 **CRUD Functionality**
+
 Teahouse
+
 2. [x] done >> User Story 1, Teahouse Index 
 
 For each teahouse table
@@ -49,7 +50,7 @@ When I visit '/teahouses/:id'
 Then I see the teahouse with that id including the teahouse's attributes:
 - data from each column that is on the teahouse table
 
-4. [ ] done >> User Story 3, Teahouse Creation 
+4. [x] done >> User Story 3, Teahouse Creation 
 
 As a visitor
 When I visit the Teahouse Index page
@@ -62,7 +63,7 @@ Then a `POST` request is sent to the '/teahouses' route,
 a new teahouse record is created,
 and I am redirected to the Teahouse Index page where I see the new Teahouse displayed.
 
-5. [ ] done >> User Story 4, Teahouse Update 
+5. [x] done >> User Story 4, Teahouse Update 
 
 As a visitor
 When I visit a teahouse show page

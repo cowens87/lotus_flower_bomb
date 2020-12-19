@@ -8,6 +8,7 @@ class CreateRequests < ActiveRecord::Migration[5.2]
       t.integer :zip
       t.string :reason
       t.integer :status, :default => 0
+      t.timestamps
     end
   end
 end

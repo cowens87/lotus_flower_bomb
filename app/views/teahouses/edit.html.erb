@@ -1,0 +1,13 @@
+<%= form_tag(teahouse_path(@teahouse.id), method: :patch) do %>
+  <%= label_tag :name, 'Name:' %>
+  <%= text_field_tag :name,  @teahouse.name%><br>
+  <%= label_tag :address, 'Address:' %>
+  <%= text_field_tag :address, @teahouse.address%><br>
+  <%= label_tag :city, 'City:' %>
+  <%= text_field_tag :city, @teahouse.city%><br>
+  <%= label_tag :state, 'State:' %>
+  <%= text_field_tag :state, @teahouse.state%><br>
+  <%= label_tag :zip, 'Zip:' %>
+  <%= text_field_tag :zip, @teahouse.zip%><br>
+  <%= submit_tag 'Submit' %>
+<% end %>
