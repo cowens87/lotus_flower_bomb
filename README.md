@@ -13,7 +13,7 @@
 * Deploy an application to Heroku
 ### PREWORK
 ```
-[x] done >> Deploy your application to Heroku
+Deploy your application to Heroku
 
 As a visitor of the site
 I will perform all user stories
@@ -142,7 +142,7 @@ and I am redirected to the boba_tea index page where I no longer see this boba_t
 CRUD functionality will be reviewed at your first check-in
 
 **ActiveRecord**
-12. [NOT APPLICABLE] done >> User Story 12, Records with a DateTime Column Automatically Sort by the Most Recently Created Records on Their Index Page 
+12. [N/A] done >> User Story 12, Records with a DateTime Column Automatically Sort by the Most Recently Created Records on Their Index Page 
 
 As a visitor
 When I visit the '/teahouses' index page for a teahouse table that has a DateTime column
@@ -169,7 +169,7 @@ I see a form that allows me to input a number value
 When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
 Then I am brought back to the current index page with only the records that meet that threshold shown.
 
-16. [ ] done >> User Story 16, Sort Teahouses by Number of Boba_tea
+16. [x] done >> User Story 16, Sort Teahouses by Number of Boba_tea
 
 As a visitor
 When I visit the Teahouses Index Page
@@ -184,7 +184,6 @@ When I visit the Teahouse's boba_tea Index Page
 Then I see a link to sort boba_tea in alphabetical order
 When I click on the link
 I'm taken back to the Teahouse's boba_tea Index Page where I see all of the teahouses in alphabetical order
-ActiveRecord functionality will be reviewed at your first and second check-in
 
 **Usability**
 Users should be able to use the site easily. This means making sure there are links/buttons to reach all parts of the site and the styling/layout is sensible.
