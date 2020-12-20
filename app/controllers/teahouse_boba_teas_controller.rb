@@ -8,10 +8,10 @@ class TeahouseBobaTeasController < ApplicationController
   end
 
   def create
-    @tea = Teahouse.find(params[:id])
-    @tea.boba_teas.create!(boba_params)
-    if @tea.save
-      redirect_to teahouse_boba_teas_path(@tea.id)
+    tea = Teahouse.find(params[:id])
+    tea.boba_teas.create!(boba_params)
+    if tea.save
+      redirect_to teahouse_boba_teas_path(tea.id)
     else 
       flash.now[:notice]= "Please Complete All Fields"
       render :new
