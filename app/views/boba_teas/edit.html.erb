@@ -1,0 +1,15 @@
+<h1> Update Boba Tea Info </h1>
+<%= form_tag(boba_tea_path(@boba_tea.id), method: :patch) do %>
+  <%= label_tag :name, 'Name:' %>
+  <%= text_field_tag :name,  @boba_tea.name%><br>
+  <%= label_tag :price, 'Price:' %>
+  <%= text_field_tag :price, @boba_tea.price%><br>
+  <%= label_tag :base, 'Base:' %>
+  <%= text_field_tag :base, @boba_tea.base%><br>
+  <%= label_tag :description, 'Description:' %>
+  <%= text_field_tag :description, @boba_tea.description%><br>
+  <%= label_tag :caffeinated, 'Caffeinated?' %>
+  <%= hidden_field_tag :caffeinated, false %>
+  <%= check_box_tag :caffeinated, true %><br>
+  <%= submit_tag 'Submit' %>
+<% end %>

@@ -4,4 +4,5 @@
 <li>State:          <%= @teahouse.state%></li> 
 <li>Zip:            <%= @teahouse.zip%></li><br> 
 
-<%= link_to 'Update Teahouse', edit_teahouse_path(@teahouse.id) %>
+<%= link_to 'Update Teahouse', edit_teahouse_path(@teahouse.id) %><br> 
+<%= link_to 'Delete Teahouse', teahouse_path(@teahouse.id), method: :delete %><br/> 

@@ -31,8 +31,18 @@ RSpec.describe 'As a visitor', type: :feature do
       click_on 'Submit'
 
       expect(current_path).to eq(teahouse_path(@teahouse1.id))
-
       expect(page).to have_content("1234 Boba Tea Lane")
+    end
+    # 1-M User Story 5
+    it 'I see a link to delete the teahouse and all related chilren, once deleted returns to index page' do
+      visit teahouse_path(@teahouse1.id)
+
+      expect(page).to have_link('Delete Teahouse')
+      
+      click_on 'Delete Teahouse'
+
+      expect(current_path).to eq(teahouses_path)
+      expect(page).to_not have_content(@teahouse1.name)
     end
   end
 end

@@ -1,6 +1,6 @@
 <h2> Add a New Teahouse </h2>
 
-<%= form_tag "/teahouses" do %>
+<%= form_tag teahouses_path do %>
   <%= label_tag :name, 'Name:' %>
   <%= text_field_tag :name,  '', :required => true%><br>
   <%= label_tag :address, 'Address:' %>

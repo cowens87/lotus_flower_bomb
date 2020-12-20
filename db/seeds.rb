@@ -10,11 +10,11 @@ BobaTeaRequest.destroy_all
 @bent_straw   = Teahouse.create!(name: "Bent Straw Teahouse", address: "102 Shelter Dr.", city: "Commerce City", state: "CO", zip: 80022)
 # Boba Teas
 @thai_boba    = @honey_pot.boba_teas.create!(image:"", name: "Thai Boba Tea", base: 'Thai Tea', price: 4.96, 
-                                             description: "Smooth taste with hints of cream and exotic spices", purchasable: 0)
+                                             description: "Smooth taste with hints of cream and exotic spices", caffeinated: false)
 @coffee_boba  = @lily_pad.boba_teas.create!(image:"", name: "Coffee Boba Tea", base: 'Black Tea', price: 5.08, 
-                                            description: "Rich and decadent mocha and java flavors", purchasable: 0)
+                                            description: "Rich and decadent mocha and java flavors", caffeinated: true)
 @matcha_boba  = @bent_straw.boba_teas.create!(image:"", name: "Matcha Boba Tea", base: 'Green Tea', price: 7.50, 
-                                              description: "Bitter sweet matcha, good for your mouth and soul", purchasable: 0)
+                                              description: "Bitter sweet matcha, good for your mouth and soul", caffeinated: false)
 # Requests
 @ms_jenkins   = Request.create!({name: 'Buttercup Jenkins', address: "101 Puppy Love Lane", 
                                 city: 'Aurora', state: 'CO', zip: 80017, 
