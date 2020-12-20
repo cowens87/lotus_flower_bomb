@@ -37,7 +37,6 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(current_path).to eq(teahouses_path)
 
       expect(page).to have_content("#{@teahouse1.name}")
-      expect(page).to have_content("#{@teahouse1.address}")
     end
   end
 end

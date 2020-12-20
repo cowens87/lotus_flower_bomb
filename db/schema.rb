@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_12_18_203924) do
     t.string "name"
     t.float "price"
     t.string "base"
-    t.integer "purchasable", default: 0
+    t.boolean "caffeinated"
     t.string "description"
     t.bigint "teahouse_id"
     t.index ["teahouse_id"], name: "index_boba_teas_on_teahouse_id"

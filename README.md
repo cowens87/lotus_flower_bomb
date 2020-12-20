@@ -25,7 +25,7 @@ the application must be hosted on Heroku.
 ```
 ## ONE TO MANY USER STORIES 
 
-1. [ ] done >> Schema Design
+[x] done >> Schema Design
 
 You can create as many columns on each table as you would like, but we need a few columns represented on at least one table:
     1. One boolean column
@@ -36,21 +36,21 @@ You can create as many columns on each table as you would like, but we need a fe
 
 Teahouse
 
-2. [x] done >> User Story 1, Teahouse Index 
+1. [x] done >> User Story 1, Teahouse Index 
 
 For each teahouse table
 As a visitor
 When I visit '/teahouses'
 Then I see the name of each teahouse record in the system
 
-3. [x] done >> User Story 2, Teahouse Show 
+2. [x] done >> User Story 2, Teahouse Show 
 
 As a visitor
 When I visit '/teahouses/:id'
 Then I see the teahouse with that id including the teahouse's attributes:
 - data from each column that is on the teahouse table
 
-4. [x] done >> User Story 3, Teahouse Creation 
+3. [x] done >> User Story 3, Teahouse Creation 
 
 As a visitor
 When I visit the Teahouse Index page
@@ -63,7 +63,7 @@ Then a `POST` request is sent to the '/teahouses' route,
 a new teahouse record is created,
 and I am redirected to the Teahouse Index page where I see the new Teahouse displayed.
 
-5. [x] done >> User Story 4, Teahouse Update 
+4. [x] done >> User Story 4, Teahouse Update 
 
 As a visitor
 When I visit a teahouse show page
@@ -76,7 +76,7 @@ Then a `PATCH` request is sent to '/teahouses/:id',
 the teahouse's info is updated,
 and I am redirected to the Teahouse's Show page where I see the teahouse's updated info
 
-6. [ ] done >> User Story 5, Teahouse Delete 
+5. [x] done >> User Story 5, Teahouse Delete 
 
 As a visitor
 When I visit a teahouse show page
@@ -85,43 +85,43 @@ When I click the link "Delete Teahouse"
 Then a 'DELETE' request is sent to '/teahouses/:id',
 the teahouse is deleted, and all boba_tea records are deleted
 and I am redirected to the teahouse index page where I no longer see this teahouse
-Boba_tearen
-Boba_tearen can be associated to the Teahouse. Boba_tearen belong to a teahouse.
+
+Boba_tea can be associated to the Teahouse. Boba_tea belong to a teahouse.
 
 Anywhere you see boba_tea_table_name think pets from our Pets and Shelters example.
 
-7. [ ] done >> User Story 6, Boba_tea Index 
+6. [x] done >> User Story 6, Boba Tea Index 
 
 As a visitor
 When I visit '/boba_tea_table_name'
 Then I see each Boba_tea in the system including the Boba_tea's attributes:
 
-8. [ ] done >> User Story 7, Teahouse Boba_teas Index 
+7. [x] done >> User Story 7, Teahouse Boba Teas Index 
 
 As a visitor
 When I visit '/teahouses/:teahouse_id/boba_tea_table_name'
-Then I see each Boba_tea that is associated with that Teahouse with each Boba_tea's attributes:
+Then I see each Boba_tea that is associated with that Teahouse with each Boba_tea's attributes
 
-9. [ ] done >> User Story 8, Boba_tea Show 
+8. [x] done >> User Story 8, Boba_tea Show 
 
 As a visitor
 When I visit '/boba_tea_table_name/:id'
 Then I see the boba_tea with that id including the boba_tea's attributes:
 
-10. [ ] done >> User Story 9, Teahouse Boba_tea Creation 
-
+9. [x] done >> User Story 9, Teahouse Boba_tea Creation 
+# From the perspective of the Teahouse Vendor
 As a visitor
 When I visit a Teahouse Boba_teas Index page
-Then I see a link to add a new adoptable boba_tea for that teahouse "Create Boba_tea"
+Then I see a link to add a new purchasable boba_tea for that teahouse "Add Boba Tea"
 When I click the link
-I am taken to '/teahouses/:teahouse_id/boba_tea_table_name/new' where I see a form to add a new adoptable boba_tea
+I am taken to '/teahouses/:teahouse_id/boba_tea_table_name/new' where I see a form to add a new purchasable boba_tea
 When I fill in the form with the boba_tea's attributes:
-And I click the button "Create Boba_tea"
+And I click the button "Add Boba Tea"
 Then a `POST` request is sent to '/teahouses/:teahouse_id/boba_tea_table_name',
 a new boba_tea object/row is created for that teahouse,
 and I am redirected to the Teahouse Boba_teas Index page where I can see the new boba_tea listed
 
-11. [ ] done >> User Story 10, Boba_tea Update 
+10. [x] done >> User Story 10, Boba_tea Update 
 
 As a visitor
 When I visit a Boba_tea Show page
@@ -133,7 +133,7 @@ Then a `PATCH` request is sent to '/boba_tea_table_name/:id',
 the boba_tea's data is updated,
 and I am redirected to the Boba_tea Show page where I see the Boba_tea's updated information
 
-12. [ ] done >> User Story 11, Boba_tea Delete 
+11. [x] done >> User Story 11, Boba_tea Delete 
 
 As a visitor
 When I visit a boba_tea show page

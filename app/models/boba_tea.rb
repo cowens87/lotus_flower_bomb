@@ -4,5 +4,5 @@ class BobaTea < ApplicationRecord
   has_many :requests, through: :boba_tea_requests
   
   validates_presence_of :name, :price, :base, :description
-  enum purchasable: [false, true]
+  validates_inclusion_of :caffeinated, in: [true, false]
 end

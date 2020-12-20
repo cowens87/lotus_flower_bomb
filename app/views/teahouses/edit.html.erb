@@ -1,3 +1,4 @@
+<h1> Update Teahouse Info </h1>
 <%= form_tag(teahouse_path(@teahouse.id), method: :patch) do %>
   <%= label_tag :name, 'Name:' %>
   <%= text_field_tag :name,  @teahouse.name%><br>

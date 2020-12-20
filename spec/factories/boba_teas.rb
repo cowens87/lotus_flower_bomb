@@ -5,7 +5,7 @@ FactoryBot.define do
     name        {"#{Faker::Movies::Hobbit.character} Tea Blend"}
     price       {Faker::Commerce.price}
     base        {Faker::Coffee.variety }
-    purchasable {1}
+    caffeinated {true}
     description {Faker::Coffee.notes}
   end
 end 

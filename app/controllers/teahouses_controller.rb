@@ -31,6 +31,11 @@ class TeahousesController < ApplicationController
     redirect_to teahouse_path(teahouse.id)
   end
 
+  def destroy
+    Teahouse.destroy(params[:id])
+    redirect_to teahouses_path
+  end
+
   private
 
   def teahouse_params
