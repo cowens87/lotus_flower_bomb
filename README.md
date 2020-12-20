@@ -142,7 +142,7 @@ and I am redirected to the boba_tea index page where I no longer see this boba_t
 CRUD functionality will be reviewed at your first check-in
 
 **ActiveRecord**
-12. [ ] done >> User Story 12, Records with a DateTime Column Automatically Sort by the Most Recently Created Records on Their Index Page 
+12. [NOT APPLICABLE] done >> User Story 12, Records with a DateTime Column Automatically Sort by the Most Recently Created Records on Their Index Page 
 
 As a visitor
 When I visit the '/teahouses' index page for a teahouse table that has a DateTime column
@@ -169,7 +169,7 @@ I see a form that allows me to input a number value
 When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
 Then I am brought back to the current index page with only the records that meet that threshold shown.
 
-16. [ ] done >> User Story 16, Sort Teahouses by Number of Boba_tear 
+16. [ ] done >> User Story 16, Sort Teahouses by Number of Boba_tea
 
 As a visitor
 When I visit the Teahouses Index Page
@@ -177,7 +177,7 @@ Then I see a link to sort teahouses by the number of `boba_tea_table_name` they 
 When I click on the link
 I'm taken back to the Teahouse Index Page where I see all of the teahouses in order of their count of `boba_tea_table_name` (highest to lowest) And, I see the number of boba_tea next to each teahouse name
 
-17. [ ] done >> User Story 17, Sort Teahouse's Boba_tear in Alphabetical Order by name 
+17. [ ] done >> User Story 17, Sort Teahouse's Boba_tea in Alphabetical Order by name 
 
 As a visitor
 When I visit the Teahouse's boba_tea Index Page

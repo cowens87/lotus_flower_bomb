@@ -38,11 +38,11 @@ RSpec.describe 'As a visitor', type: :feature do
     # 1-M User Story 11
     it 'I see a link to delete the boba tea, once deleted returns to index page' do
       visit boba_tea_path(@cherry_berry.id) 
-
+      
       expect(page).to have_link('Delete Boba Tea')
       
       click_on 'Delete Boba Tea'
-
+      
       expect(current_path).to eq(boba_teas_path)
       expect(page).to_not have_content(@cherry_berry.name)
     end
