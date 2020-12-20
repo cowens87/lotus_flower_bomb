@@ -5,4 +5,12 @@ class BobaTea < ApplicationRecord
   
   validates_presence_of :name, :price, :base, :description
   validates_inclusion_of :caffeinated, in: [true, false]
+
+  def self.true_false
+    order(caffeinated: :desc)
+  end
+
+  def self.teas_by_price(amount)
+    where('price >= ?', amount)
+  end
 end

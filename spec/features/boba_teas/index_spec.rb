@@ -5,8 +5,8 @@ RSpec.describe 'As a visitor', type: :feature do
     before(:each) do
       @teahouse1    = create(:teahouse)
       @teahouse2    = create(:teahouse)
-      @thai_boba    = create(:boba_tea, teahouse_id: @teahouse1.id)
-      @cherry_berry = create(:boba_tea, teahouse_id: @teahouse2.id)
+      @thai_boba    = create(:boba_tea, price: 4.35, teahouse_id: @teahouse1.id)
+      @cherry_berry = create(:boba_tea, price: 8.50, caffeinated: false, teahouse_id: @teahouse2.id)
     end
     # 1-M User Story 6
     it 'I see each Boba tea in the system including the attributes' do
@@ -22,6 +22,27 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content(@cherry_berry.base)
       expect(page).to have_content(@cherry_berry.caffeinated)
       expect(page).to have_content(@cherry_berry.description)
+    end
+    # 1-M User Story 14
+    it 'I see the records that have a `true` above/before the records that have a false' do
+      visit boba_teas_path
+      
+      expect(@thai_boba.name).to appear_before(@cherry_berry.name)
+      expect(@cherry_berry.name).to_not appear_before(@thai_boba.name)
+    end
+    # 1-M User Story 15
+    it 'I see a form that allows me to input and filter by a number value' do
+      visit boba_teas_path
+      
+      expect(page).to have_content(@thai_boba.name)
+      expect(page).to have_content(@cherry_berry.name)
+
+      fill_in 'Teas with price greater than:', with: '7'
+      click_button 'Go'
+
+      expect(page).not_to have_content(@thai_boba.name)
+      expect(page).to have_content(@cherry_berry.name)
+
     end
   end 
 end

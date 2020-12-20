@@ -1,7 +1,5 @@
 # README
 # Lotus Flower Bomb
-
-In this project, students will build upon the code in this repo to create a Tea Ordering Platform. Customers will be able to apply to buy teas, and Admins will be able to approve or reject applications and see statistics for the Teahousees, Teas, and Applications in the system.
 ## Learning Goals
 
 * Build out CRUD functionality for a many to many relationship
@@ -13,7 +11,7 @@ In this project, students will build upon the code in this repo to create a Tea 
 * Use `within` blocks in tests
 * Track user stories using GitHub Projects
 * Deploy an application to Heroku
-## PREWORK
+### PREWORK
 ```
 [x] done >> Deploy your application to Heroku
 
@@ -108,7 +106,7 @@ When I visit '/boba_tea_table_name/:id'
 Then I see the boba_tea with that id including the boba_tea's attributes:
 
 9. [x] done >> User Story 9, Teahouse Boba_tea Creation 
-# From the perspective of the Teahouse Vendor
+
 As a visitor
 When I visit a Teahouse Boba_teas Index page
 Then I see a link to add a new purchasable boba_tea for that teahouse "Add Boba Tea"
@@ -147,23 +145,23 @@ CRUD functionality will be reviewed at your first check-in
 12. [ ] done >> User Story 12, Records with a DateTime Column Automatically Sort by the Most Recently Created Records on Their Index Page 
 
 As a visitor
-When I visit the '/teahouses' or '/boba_tea_table_name' index page for a teahouse or boba_tea table that has a DateTime column
+When I visit the '/teahouses' index page for a teahouse table that has a DateTime column
 I see the most recently created records in order by recency from top to bottom
 I also see the DateTime(s) next to each of the records in a reasonably formatted manner
 
-13. [ ] done >> User Story 13, Teahouse Boba_tea Count 
+13. [x] done >> User Story 13, Teahouse Boba_tea Count 
 
 As a visitor
 When I visit a teahouse's `boba_tea_table_name` index page
 I see a count of the number of `boba_tea_table_name` associated with this teahouse
 
-14. [ ] done >> User Story 14, Boolean Column `true` Records are Displayed First on All Index Pages
+14. [x] done >> User Story 14, Boolean Column `true` Records are Displayed First on All Index Pages
 
 As a visitor
-When I visit the '/teahouses' or '/boba_tea_table_name' index page for a teahouse or boba_tea table that has a boolean column
+When I visit the /boba_teas' index page for a boba_tea table that has a boolean column
 I see the records that have a `true` above/before the records that have a false
 
-15. [ ] done >> User Story 15, Display Records Over a Given Threshold if the Records Have a Numeric Column
+15. [x] done >> User Story 15, Display Records Over a Given Threshold if the Records Have a Numeric Column
 
 As a visitor
 When I visit the '/teahouses' or '/boba_tea_table_name' index page for any teahouse or boba_tea table that has a numeric column

@@ -7,6 +7,8 @@ RSpec.describe 'As a visitor', type: :feature do
       @teahouse2    = create(:teahouse)
       @thai_boba    = create(:boba_tea, teahouse_id: @teahouse1.id)
       @cherry_berry = create(:boba_tea, teahouse_id: @teahouse2.id)
+      @bananamo     = create(:boba_tea, teahouse_id: @teahouse2.id)
+      @coquito      = create(:boba_tea, teahouse_id: @teahouse2.id)
     end
     # 1-M User Story 7
     it 'I see each Boba tea that is associated with that Teahouse with each Boba Teas attributes' do
@@ -39,6 +41,12 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(current_path).to eq(teahouse_boba_teas_path(@teahouse2.id))
 
       expect(page).to have_content("Mango-Tango Boba")
+    end
+    # 1-M User Story 13
+    it 'I see a count of the number of boba teas associated with this teahouse' do
+      visit teahouse_boba_teas_path(@teahouse2.id)
+      
+      expect(page).to have_content("Number of Boba Teas: #{@teahouse2.boba_teas.count}")
     end
   end
 end

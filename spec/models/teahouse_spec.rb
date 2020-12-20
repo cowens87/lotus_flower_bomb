@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Teahouse, type: :model do
   before(:each) do
-    @teahouse = create(:teahouse)
+    @teahouse   = create(:teahouse)
+    @lemon_pina = create(:boba_tea, teahouse_id: @teahouse.id)
   end 
 
   describe 'validations' do
@@ -16,4 +17,10 @@ RSpec.describe Teahouse, type: :model do
   describe 'relationships' do
     it {should have_many :boba_teas}
   end
+
+  # describe 'Teahouse count of boba teas' do
+  #   it 'Knows the number of boba teas' do
+  #     expect(@teahouse.boba_count).to eq(1)
+  #   end
+  # end 
 end

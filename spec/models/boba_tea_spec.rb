@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe BobaTea, type: :model do
   before(:each) do
-    @boba_tea = create(:boba_tea)
+    @boba_tea1 = create(:boba_tea, price: 8.00)
+    @boba_tea2 = create(:boba_tea, price: 5.00, caffeinated: false)
+    @boba_tea3 = create(:boba_tea, price: 4.25)
   end 
 
   describe 'validations' do
@@ -16,5 +18,17 @@ RSpec.describe BobaTea, type: :model do
     it {should belong_to :teahouse}
     it {should have_many :boba_tea_requests}
     it {should have_many(:requests).through(:boba_tea_requests)}
+  end
+  # 1-M User Story 14
+  describe 'True before false' do
+    it 'Can order by true/false' do
+      expect(BobaTea.true_false).to eq([@boba_tea1, @boba_tea3, @boba_tea2])
+    end
+  end
+  # 1-M User Story 15
+  describe 'Filter by Price of Tea' do
+    it 'Can find boba teas over a certain price range' do
+      expect(BobaTea.teas_by_price(5).count).to eq(2)
+    end
   end
 end
