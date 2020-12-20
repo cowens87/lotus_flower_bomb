@@ -133,7 +133,7 @@ Then a `PATCH` request is sent to '/boba_tea_table_name/:id',
 the boba_tea's data is updated,
 and I am redirected to the Boba_tea Show page where I see the Boba_tea's updated information
 
-12. [ ] done >> User Story 11, Boba_tea Delete 
+11. [x] done >> User Story 11, Boba_tea Delete 
 
 As a visitor
 When I visit a boba_tea show page
