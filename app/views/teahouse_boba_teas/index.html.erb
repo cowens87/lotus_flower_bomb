@@ -1,6 +1,7 @@
 <h1>List of Boba Teas</h1>
 
-<%= link_to 'Add Boba Tea', new_teahouse_boba_teas_path %>
+<%= link_to 'Add Boba Tea', new_teahouse_boba_teas_path %><br>
+<%= link_to "Sort Tea Name by Alpha", "/teahouses/#{@teahouse.id}/boba_teas?sort=true", method: :get  %>
 
 <p>Number of Boba Teas:      <%= @teas.count %></p>
 

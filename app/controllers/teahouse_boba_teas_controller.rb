@@ -1,6 +1,11 @@
 class TeahouseBobaTeasController < ApplicationController
   def index
-    @teas = Teahouse.find(params[:id]).boba_teas
+    @teahouse = Teahouse.find(params[:id])
+    if params[:sort]
+      @teas = Teahouse.find(params[:id]).boba_teas.alpha_sort
+    else
+      @teas = Teahouse.find(params[:id]).boba_teas
+    end
   end
 
   def new

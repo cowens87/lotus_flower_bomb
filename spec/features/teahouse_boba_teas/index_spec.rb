@@ -6,9 +6,9 @@ RSpec.describe 'As a visitor', type: :feature do
       @teahouse1    = create(:teahouse)
       @teahouse2    = create(:teahouse)
       @thai_boba    = create(:boba_tea, teahouse_id: @teahouse1.id)
-      @cherry_berry = create(:boba_tea, teahouse_id: @teahouse2.id)
-      @bananamo     = create(:boba_tea, teahouse_id: @teahouse2.id)
-      @coquito      = create(:boba_tea, teahouse_id: @teahouse2.id)
+      @cherry_berry = create(:boba_tea, name: 'Cherry Berry', teahouse_id: @teahouse2.id)
+      @bananamo     = create(:boba_tea, name: 'Bananamo', teahouse_id: @teahouse2.id)
+      @coquito      = create(:boba_tea, name: 'Coquito', teahouse_id: @teahouse2.id)
     end
     # 1-M User Story 7
     it 'I see each Boba tea that is associated with that Teahouse with each Boba Teas attributes' do
@@ -47,6 +47,21 @@ RSpec.describe 'As a visitor', type: :feature do
       visit teahouse_boba_teas_path(@teahouse2.id)
       
       expect(page).to have_content("Number of Boba Teas: #{@teahouse2.boba_teas.count}")
+    end
+    # 1-M User Story 17
+    it 'I see a link to sort the boba teas in alphabetical order' do
+      visit teahouse_boba_teas_path(@teahouse2.id)
+
+      expect(page).to have_link('Sort Tea Name by Alpha')
+      
+      click_link 'Sort Tea Name by Alpha'
+
+      expect(current_path).to eq(teahouse_boba_teas_path(@teahouse2.id))
+      expect(@cherry_berry.name).to appear_before(@coquito.name)
+      expect(@bananamo.name).to appear_before(@coquito.name)
+      expect(@cherry_berry.name).to_not appear_before(@bananamo.name)
+      expect(@coquito.name).to_not appear_before(@bananamo.name)
+      expect(@coquito.name).to_not appear_before(@cherry_berry.name)
     end
   end
 end

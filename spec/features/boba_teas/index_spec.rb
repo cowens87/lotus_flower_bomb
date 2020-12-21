@@ -5,8 +5,8 @@ RSpec.describe 'As a visitor', type: :feature do
     before(:each) do
       @teahouse1    = create(:teahouse)
       @teahouse2    = create(:teahouse)
-      @thai_boba    = create(:boba_tea, price: 4.35, teahouse_id: @teahouse1.id)
-      @cherry_berry = create(:boba_tea, price: 8.50, caffeinated: false, teahouse_id: @teahouse2.id)
+      @thai_boba    = create(:boba_tea, name: 'Thai', price: 4.35, teahouse_id: @teahouse1.id)
+      @cherry_berry = create(:boba_tea, name: 'Cherry Berry', price: 8.50, caffeinated: false, teahouse_id: @teahouse2.id)
     end
     # 1-M User Story 6
     it 'I see each Boba tea in the system including the attributes' do
@@ -42,7 +42,6 @@ RSpec.describe 'As a visitor', type: :feature do
 
       expect(page).not_to have_content(@thai_boba.name)
       expect(page).to have_content(@cherry_berry.name)
-
     end
   end 
 end

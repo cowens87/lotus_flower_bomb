@@ -13,4 +13,8 @@ class BobaTea < ApplicationRecord
   def self.teas_by_price(amount)
     where('price >= ?', amount)
   end
+
+  def self.alpha_sort
+    order(:name)
+  end
 end

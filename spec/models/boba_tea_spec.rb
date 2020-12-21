@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe BobaTea, type: :model do
   before(:each) do
-    @boba_tea1 = create(:boba_tea, price: 8.00)
-    @boba_tea2 = create(:boba_tea, price: 5.00, caffeinated: false)
-    @boba_tea3 = create(:boba_tea, price: 4.25)
+    @boba_tea1 = create(:boba_tea, name: 'Apple Pie Tea', price: 8.00)
+    @boba_tea2 = create(:boba_tea, name: 'Mango Tea', price: 5.00, caffeinated: false)
+    @boba_tea3 = create(:boba_tea, name: 'Salted Caramel', price: 4.25)
   end 
 
   describe 'validations' do
@@ -29,6 +29,12 @@ RSpec.describe BobaTea, type: :model do
   describe 'Filter by Price of Tea' do
     it 'Can find boba teas over a certain price range' do
       expect(BobaTea.teas_by_price(5).count).to eq(2)
+    end
+  end
+  # 1-M User Story 17
+  describe 'Sort Teas Alphabetically' do
+    it 'Can sort alphabetical' do
+      expect(BobaTea.alpha_sort).to eq([@boba_tea1, @boba_tea2, @boba_tea3])
     end
   end
 end
