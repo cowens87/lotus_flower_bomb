@@ -1,7 +1,5 @@
 # README
 # Lotus Flower Bomb
-
-In this project, students will build upon the code in this repo to create a Tea Ordering Platform. Customers will be able to apply to buy teas, and Admins will be able to approve or reject applications and see statistics for the Teahousees, Teas, and Applications in the system.
 ## Learning Goals
 
 * Build out CRUD functionality for a many to many relationship
@@ -13,9 +11,9 @@ In this project, students will build upon the code in this repo to create a Tea 
 * Use `within` blocks in tests
 * Track user stories using GitHub Projects
 * Deploy an application to Heroku
-## PREWORK
+### PREWORK
 ```
-[x] done >> Deploy your application to Heroku
+Deploy your application to Heroku
 
 As a visitor of the site
 I will perform all user stories
@@ -34,7 +32,7 @@ You can create as many columns on each table as you would like, but we need a fe
 
 **CRUD Functionality**
 
-Teahouse
+* Teahouse
 
 1. [x] done >> User Story 1, Teahouse Index 
 
@@ -86,9 +84,8 @@ Then a 'DELETE' request is sent to '/teahouses/:id',
 the teahouse is deleted, and all boba_tea records are deleted
 and I am redirected to the teahouse index page where I no longer see this teahouse
 
-Boba_tea can be associated to the Teahouse. Boba_tea belong to a teahouse.
-
-Anywhere you see boba_tea_table_name think pets from our Pets and Shelters example.
+* Boba_tea can be associated to the Teahouse. Boba_tea belong to a teahouse.
+- Anywhere you see boba_tea_table_name think pets from our Pets and Shelters example.
 
 6. [x] done >> User Story 6, Boba Tea Index 
 
@@ -109,7 +106,7 @@ When I visit '/boba_tea_table_name/:id'
 Then I see the boba_tea with that id including the boba_tea's attributes:
 
 9. [x] done >> User Story 9, Teahouse Boba_tea Creation 
-# From the perspective of the Teahouse Vendor
+
 As a visitor
 When I visit a Teahouse Boba_teas Index page
 Then I see a link to add a new purchasable boba_tea for that teahouse "Add Boba Tea"
@@ -145,26 +142,26 @@ and I am redirected to the boba_tea index page where I no longer see this boba_t
 CRUD functionality will be reviewed at your first check-in
 
 **ActiveRecord**
-13. [ ] done >> User Story 12, Records with a DateTime Column Automatically Sort by the Most Recently Created Records on Their Index Page 
+12. [N/A] done >> User Story 12, Records with a DateTime Column Automatically Sort by the Most Recently Created Records on Their Index Page 
 
 As a visitor
-When I visit the '/teahouses' or '/boba_tea_table_name' index page for a teahouse or boba_tea table that has a DateTime column
+When I visit the '/teahouses' index page for a teahouse table that has a DateTime column
 I see the most recently created records in order by recency from top to bottom
 I also see the DateTime(s) next to each of the records in a reasonably formatted manner
 
-14. [ ] done >> User Story 13, Teahouse Boba_tea Count 
+13. [x] done >> User Story 13, Teahouse Boba_tea Count 
 
 As a visitor
 When I visit a teahouse's `boba_tea_table_name` index page
 I see a count of the number of `boba_tea_table_name` associated with this teahouse
 
-15. [ ] done >> User Story 14, Boolean Column `true` Records are Displayed First on All Index Pages
+14. [x] done >> User Story 14, Boolean Column `true` Records are Displayed First on All Index Pages
 
 As a visitor
-When I visit the '/teahouses' or '/boba_tea_table_name' index page for a teahouse or boba_tea table that has a boolean column
+When I visit the /boba_teas' index page for a boba_tea table that has a boolean column
 I see the records that have a `true` above/before the records that have a false
 
-16. [ ] done >> User Story 15, Display Records Over a Given Threshold if the Records Have a Numeric Column
+15. [x] done >> User Story 15, Display Records Over a Given Threshold if the Records Have a Numeric Column
 
 As a visitor
 When I visit the '/teahouses' or '/boba_tea_table_name' index page for any teahouse or boba_tea table that has a numeric column
@@ -172,27 +169,26 @@ I see a form that allows me to input a number value
 When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
 Then I am brought back to the current index page with only the records that meet that threshold shown.
 
-17. [ ] done >> User Story 16, Sort Teahouses by Number of Boba_tearen 
+16. [x] done >> User Story 16, Sort Teahouses by Number of Boba_tea
 
 As a visitor
 When I visit the Teahouses Index Page
 Then I see a link to sort teahouses by the number of `boba_tea_table_name` they have
 When I click on the link
-I'm taken back to the Teahouse Index Page where I see all of the teahouses in order of their count of `boba_tea_table_name` (highest to lowest) And, I see the number of boba_tearen next to each teahouse name
+I'm taken back to the Teahouse Index Page where I see all of the teahouses in order of their count of `boba_tea_table_name` (highest to lowest) And, I see the number of boba_tea next to each teahouse name
 
-18. [ ] done >> User Story 17, Sort Teahouse's Boba_tearen in Alphabetical Order by name 
+17. [ ] done >> User Story 17, Sort Teahouse's Boba_tea in Alphabetical Order by name 
 
 As a visitor
-When I visit the Teahouse's boba_tearen Index Page
-Then I see a link to sort boba_tearen in alphabetical order
+When I visit the Teahouse's boba_tea Index Page
+Then I see a link to sort boba_tea in alphabetical order
 When I click on the link
-I'm taken back to the Teahouse's boba_tearen Index Page where I see all of the teahouses in alphabetical order
-ActiveRecord functionality will be reviewed at your first and second check-in
+I'm taken back to the Teahouse's boba_tea Index Page where I see all of the teahouses in alphabetical order
 
 **Usability**
 Users should be able to use the site easily. This means making sure there are links/buttons to reach all parts of the site and the styling/layout is sensible.
 
-19. [ ] done >> User Story 18, Teahouse Update From Teahouse Index Page 
+18. [ ] done >> User Story 18, Teahouse Update From Teahouse Index Page 
 
 As a visitor
 When I visit the teahouse index page
@@ -200,7 +196,7 @@ Next to every teahouse, I see a link to edit that teahouse's info
 When I click the link
 I should be taken to that teahouses edit page where I can update its information just like in User Story 5
 
-20. [ ] done >> User Story 19, Teahouse Delete From Teahouse Index Page 
+19. [ ] done >> User Story 19, Teahouse Delete From Teahouse Index Page 
 
 As a visitor
 When I visit the teahouse index page
@@ -208,7 +204,7 @@ Next to every teahouse, I see a link to delete that teahouse
 When I click the link
 I am returned to the Teahouse Index Page where I no longer see that teahouse
 
-21. [ ] done >> User Story 20, Boba_tea Update From Boba_teas Index Page 
+20. [ ] done >> User Story 20, Boba_tea Update From Boba_teas Index Page 
 
 As a visitor
 When I visit the `boba_tea_table_name` index page or a teahouse `boba_tea_table_name` index page
@@ -216,7 +212,7 @@ Next to every boba_tea, I see a link to edit that boba_tea's info
 When I click the link
 I should be taken to that `boba_tea_table_name` edit page where I can update its information just like in User Story 11
 
-22. [ ] done >> User Story 21, Boba_tea Delete From Boba_teas Index Page 
+21. [ ] done >> User Story 21, Boba_tea Delete From Boba_teas Index Page 
 
 As a visitor
 When I visit the `boba_tea_table_name` index page or a teahouse `boba_tea_table_name` index page
@@ -224,31 +220,31 @@ Next to every boba_tea, I see a link to delete that boba_tea
 When I click the link
 I should be taken to the `boba_tea_table_name` index page where I no longer see that boba_tea
 
-23. [ ] done >> User Story 22, Teahouse Links
+22. [ ] done >> User Story 22, Teahouse Links
 
 As a visitor
 When I click on the name of a teahouse anywhere on the site
 Then that link takes me to that Teahouse's show page
 
-24. [ ] done >> User Story 23, Boba_tea Links
+23. [ ] done >> User Story 23, Boba_tea Links
 
 As a visitor
 When I click on the name a boba_tea anywhere on the site
 Then that link takes me to that Boba_tea's show page
 
-25. [ ] done >> User Story 24, Boba_tea Index Link
+24. [ ] done >> User Story 24, Boba_tea Index Link
 
 As a visitor
 When I visit any page on the site
 Then I see a link at the top of the page that takes me to the Boba_tea Index
 
-26. [ ] done >> User Story 25, Teahouse Index Link
+25. [ ] done >> User Story 25, Teahouse Index Link
 
 As a visitor
 When I visit any page on the site
 Then I see a link at the top of the page that takes me to the Teahouse Index
 
-27. [ ] done >> User Story 26, Teahouse Boba_tea Index Link
+26. [ ] done >> User Story 26, Teahouse Boba_tea Index Link
 
 As a visitor
 When I visit a teahouse show page ('/teahouses/:id')
@@ -256,7 +252,7 @@ Then I see a link to take me to that teahouse's `boba_tea_table_name` page ('/te
 Usability functionality will be reviewed at your second check-in
 
 Extensions
-28. [ ] done >> User Story 27, Search by name (exact match)
+27. [ ] done >> User Story 27, Search by name (exact match)
 
 As a visitor
 When I visit an index page ('/teahouses') or ('/boba_tea_table_name')
@@ -264,7 +260,7 @@ Then I see a text box to filter results by keyword
 When I type in a keyword that is an exact match of one or more of my records and press the Search button
 Then I only see records that are an exact match returned on the page
 
-29. [ ] done >> User Story 28, Search by name (partial match)
+28. [ ] done >> User Story 28, Search by name (partial match)
 
 As a visitor
 When I visit an index page ('/teahouses') or ('/boba_tea_table_name')
@@ -457,7 +453,6 @@ And I do see a button to reject them
 ## Admin Teahouse Views
 
 These stories build out admin views for Teahouses. They will emphasize SQL and ActiveRecord concepts.
-
 ### SQL Only
 
 For the following stories, you should write your queries in raw sql. 
@@ -550,8 +545,8 @@ Then next to each Tea's name I see a link to the admin application show page whe
 ## Extensions
 ### ActiveRecord Extensions
 
-1. Refactor your code to make use of [ActiveRecord callbacks](https://guides.rubyonrails.org/active_record_callbacks.html)
-1. Refactor your code to make use of [ActiveRecord Scopes](https://guides.rubyonrails.org/active_record_querying.html#scopes)
+27. Refactor your code to make use of [ActiveRecord callbacks](https://guides.rubyonrails.org/active_record_callbacks.html)
+28. Refactor your code to make use of [ActiveRecord Scopes](https://guides.rubyonrails.org/active_record_querying.html#scopes)
 ### Styling
 
 Implement a CSS Grid Framework to improve your styling, either [CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) or [Bootstrap](https://getbootstrap.com/)

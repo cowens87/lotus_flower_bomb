@@ -1,6 +1,8 @@
 <h1>All Teahouses</h1>
 
-<%= link_to 'New Teahouse', new_teahouse_path %>
+<%= link_to 'New Teahouse', new_teahouse_path %><br>
+<%= link_to "Sort by Number of Boba Teas", '/teahouses?sort=true', method: :get  %>
+
 
 <% @teahouses.each do |teahouse| %>
   <section id="teahouse-<%=teahouse.id%>">

@@ -1,6 +1,11 @@
 class TeahouseBobaTeasController < ApplicationController
   def index
-    @teas = Teahouse.find(params[:id]).boba_teas
+    @teahouse = Teahouse.find(params[:id])
+    if params[:sort]
+      @teas = Teahouse.find(params[:id]).boba_teas.alpha_sort
+    else
+      @teas = Teahouse.find(params[:id]).boba_teas
+    end
   end
 
   def new
@@ -8,10 +13,10 @@ class TeahouseBobaTeasController < ApplicationController
   end
 
   def create
-    @tea = Teahouse.find(params[:id])
-    @tea.boba_teas.create!(boba_params)
-    if @tea.save
-      redirect_to teahouse_boba_teas_path(@tea.id)
+    tea = Teahouse.find(params[:id])
+    tea.boba_teas.create!(boba_params)
+    if tea.save
+      redirect_to teahouse_boba_teas_path(tea.id)
     else 
       flash.now[:notice]= "Please Complete All Fields"
       render :new

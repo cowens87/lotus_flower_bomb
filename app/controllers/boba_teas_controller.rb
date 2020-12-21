@@ -1,6 +1,11 @@
 class BobaTeasController < ApplicationController
   def index
-    @boba_teas = BobaTea.all
+    # require 'pry'; binding.pry
+    if params[:tea_threshold]
+      @boba_teas = BobaTea.teas_by_price(params[:tea_threshold])
+    else 
+      @boba_teas = BobaTea.true_false
+    end 
   end
 
   def show

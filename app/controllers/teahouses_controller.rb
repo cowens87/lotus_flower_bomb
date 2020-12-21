@@ -1,6 +1,10 @@
 class TeahousesController < ApplicationController
   def index
-    @teahouses = Teahouse.all
+    if params[:sort]
+      @teahouses = Teahouse.sort_by_tea_count
+    else
+      @teahouses = Teahouse.all
+    end
   end
 
   def show
