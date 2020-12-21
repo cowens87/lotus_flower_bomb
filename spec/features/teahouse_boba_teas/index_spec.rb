@@ -63,5 +63,35 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(@coquito.name).to_not appear_before(@bananamo.name)
       expect(@coquito.name).to_not appear_before(@cherry_berry.name)
     end
+    # 1-M User Story 23
+    it 'I click on the name of a boba tea anywhere on the site and I go to that boba teas show page' do
+      visit teahouse_boba_teas_path(@teahouse1.id)
+
+      expect(page).to have_link("#{@thai_boba.name}")
+           
+      click_link "#{@thai_boba.name}"
+
+      expect(current_path).to eq(boba_tea_path(@thai_boba.id))
+    end
+    # 1-M User Story 24
+    it 'I visit any page on the site I see a link at the top of the page to the Boba_tea Index' do
+      visit teahouse_boba_teas_path(@teahouse1.id)
+
+      expect(page).to have_link("List of Boba Teas")
+           
+      click_link "List of Boba Teas"
+
+      expect(current_path).to eq(boba_teas_path)
+    end
+    # 1-M User Story 25
+    it 'I visit any page on the site I see a link at the top of the page to the Teahouse Index' do
+      visit teahouse_boba_teas_path(@teahouse1.id)
+
+      expect(page).to have_link("List of Teahouses")
+           
+      click_link "List of Teahouses"
+
+      expect(current_path).to eq(teahouses_path)
+    end
   end
 end

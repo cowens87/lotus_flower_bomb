@@ -7,5 +7,7 @@
 <% @teahouses.each do |teahouse| %>
   <section id="teahouse-<%=teahouse.id%>">
     <h3><%= link_to "#{teahouse.name}", "teahouses/#{teahouse.id}" %></h3>
+    <h6><li><%= link_to "Update #{teahouse.name}", edit_teahouse_path(teahouse.id) %></li></h6>
+    <h6><li><%= link_to "Delete #{teahouse.name}", teahouse_path(teahouse.id), method: :delete  %></li></h6>
   </section>
 <% end %>
