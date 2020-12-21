@@ -52,9 +52,9 @@ RSpec.describe 'As a visitor', type: :feature do
     it 'I see a link to sort the boba teas in alphabetical order' do
       visit teahouse_boba_teas_path(@teahouse2.id)
 
-      expect(page).to have_link('Sort Tea Name by Alpha')
+      expect(page).to have_link('Sort by Tea Name')
       
-      click_link 'Sort Tea Name by Alpha'
+      click_link 'Sort by Tea Name'
 
       expect(current_path).to eq(teahouse_boba_teas_path(@teahouse2.id))
       expect(@cherry_berry.name).to appear_before(@coquito.name)

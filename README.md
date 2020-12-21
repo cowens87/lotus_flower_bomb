@@ -32,20 +32,20 @@ You can create as many columns on each table as you would like, but we need a fe
 
 **CRUD Functionality**
 
-* Teahouse
+### Teahouse
 
 1. [x] done >> User Story 1, Teahouse Index 
 
-For each teahouse table
-As a visitor
-When I visit '/teahouses'
-Then I see the name of each teahouse record in the system
+>For each teahouse table
+> As a visitor
+>When I visit '/teahouses'
+>Then I see the name of each teahouse record in the system
 
 2. [x] done >> User Story 2, Teahouse Show 
 
-As a visitor
-When I visit '/teahouses/:id'
-Then I see the teahouse with that id including the teahouse's attributes:
+>As a visitor
+>When I visit '/teahouses/:id'
+>Then I see the teahouse with that id including the teahouse's >attributes:
 - data from each column that is on the teahouse table
 
 3. [x] done >> User Story 3, Teahouse Creation 
@@ -177,7 +177,7 @@ Then I see a link to sort teahouses by the number of `boba_tea_table_name` they 
 When I click on the link
 I'm taken back to the Teahouse Index Page where I see all of the teahouses in order of their count of `boba_tea_table_name` (highest to lowest) And, I see the number of boba_tea next to each teahouse name
 
-17. [ ] done >> User Story 17, Sort Teahouse's Boba_tea in Alphabetical Order by name 
+17. [x] done >> User Story 17, Sort Teahouse's Boba_tea in Alphabetical Order by name 
 
 As a visitor
 When I visit the Teahouse's boba_tea Index Page
