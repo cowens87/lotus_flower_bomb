@@ -32,20 +32,20 @@ You can create as many columns on each table as you would like, but we need a fe
 
 **CRUD Functionality**
 
-* Teahouse
+### Teahouse
 
 1. [x] done >> User Story 1, Teahouse Index 
 
-For each teahouse table
-As a visitor
-When I visit '/teahouses'
-Then I see the name of each teahouse record in the system
+>For each teahouse table
+> As a visitor
+>When I visit '/teahouses'
+>Then I see the name of each teahouse record in the system
 
 2. [x] done >> User Story 2, Teahouse Show 
 
-As a visitor
-When I visit '/teahouses/:id'
-Then I see the teahouse with that id including the teahouse's attributes:
+>As a visitor
+>When I visit '/teahouses/:id'
+>Then I see the teahouse with that id including the teahouse's >attributes:
 - data from each column that is on the teahouse table
 
 3. [x] done >> User Story 3, Teahouse Creation 
@@ -177,7 +177,7 @@ Then I see a link to sort teahouses by the number of `boba_tea_table_name` they 
 When I click on the link
 I'm taken back to the Teahouse Index Page where I see all of the teahouses in order of their count of `boba_tea_table_name` (highest to lowest) And, I see the number of boba_tea next to each teahouse name
 
-17. [ ] done >> User Story 17, Sort Teahouse's Boba_tea in Alphabetical Order by name 
+17. [x] done >> User Story 17, Sort Teahouse's Boba_tea in Alphabetical Order by name 
 
 As a visitor
 When I visit the Teahouse's boba_tea Index Page
@@ -188,7 +188,7 @@ I'm taken back to the Teahouse's boba_tea Index Page where I see all of the teah
 **Usability**
 Users should be able to use the site easily. This means making sure there are links/buttons to reach all parts of the site and the styling/layout is sensible.
 
-18. [ ] done >> User Story 18, Teahouse Update From Teahouse Index Page 
+18. [x] done >> User Story 18, Teahouse Update From Teahouse Index Page 
 
 As a visitor
 When I visit the teahouse index page
@@ -196,7 +196,7 @@ Next to every teahouse, I see a link to edit that teahouse's info
 When I click the link
 I should be taken to that teahouses edit page where I can update its information just like in User Story 5
 
-19. [ ] done >> User Story 19, Teahouse Delete From Teahouse Index Page 
+19. [x] done >> User Story 19, Teahouse Delete From Teahouse Index Page 
 
 As a visitor
 When I visit the teahouse index page
@@ -204,7 +204,7 @@ Next to every teahouse, I see a link to delete that teahouse
 When I click the link
 I am returned to the Teahouse Index Page where I no longer see that teahouse
 
-20. [ ] done >> User Story 20, Boba_tea Update From Boba_teas Index Page 
+20. [x] done >> User Story 20, Boba_tea Update From Boba_teas Index Page 
 
 As a visitor
 When I visit the `boba_tea_table_name` index page or a teahouse `boba_tea_table_name` index page
@@ -212,7 +212,7 @@ Next to every boba_tea, I see a link to edit that boba_tea's info
 When I click the link
 I should be taken to that `boba_tea_table_name` edit page where I can update its information just like in User Story 11
 
-21. [ ] done >> User Story 21, Boba_tea Delete From Boba_teas Index Page 
+21. [x] done >> User Story 21, Boba_tea Delete From Boba_teas Index Page 
 
 As a visitor
 When I visit the `boba_tea_table_name` index page or a teahouse `boba_tea_table_name` index page
@@ -220,31 +220,31 @@ Next to every boba_tea, I see a link to delete that boba_tea
 When I click the link
 I should be taken to the `boba_tea_table_name` index page where I no longer see that boba_tea
 
-22. [ ] done >> User Story 22, Teahouse Links
+22. [x] done >> User Story 22, Teahouse Links
 
 As a visitor
 When I click on the name of a teahouse anywhere on the site
 Then that link takes me to that Teahouse's show page
 
-23. [ ] done >> User Story 23, Boba_tea Links
+23. [x] done >> User Story 23, Boba_tea Links
 
 As a visitor
 When I click on the name a boba_tea anywhere on the site
 Then that link takes me to that Boba_tea's show page
 
-24. [ ] done >> User Story 24, Boba_tea Index Link
+24. [x] done >> User Story 24, Boba_tea Index Link
 
 As a visitor
 When I visit any page on the site
 Then I see a link at the top of the page that takes me to the Boba_tea Index
 
-25. [ ] done >> User Story 25, Teahouse Index Link
+25. [x] done >> User Story 25, Teahouse Index Link
 
 As a visitor
 When I visit any page on the site
 Then I see a link at the top of the page that takes me to the Teahouse Index
 
-26. [ ] done >> User Story 26, Teahouse Boba_tea Index Link
+26. [x] done >> User Story 26, Teahouse Boba_tea Index Link
 
 As a visitor
 When I visit a teahouse show page ('/teahouses/:id')

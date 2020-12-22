@@ -52,5 +52,41 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(@teahouse1.name).to_not appear_before(@teahouse2.name)
       expect(@teahouse2.name).to appear_before(@teahouse1.name)
     end
+    # 1-M User Story 18
+    it 'Next to every teahouse, I see a link to edit that teahouses info' do
+      visit teahouses_path
+
+      expect(page).to have_link("Update #{@teahouse1.name}")
+           
+      click_link "Update #{@teahouse1.name}"
+
+      expect(current_path).to eq(edit_teahouse_path(@teahouse1.id))
+
+      fill_in 'Address:', with: "800 S Bubble Tea Way"
+      click_on 'Submit'
+
+      expect(page).to have_content("800 S Bubble Tea Way")
+    end
+    # 1-M User Story 19
+    it 'Next to every teahouse, I see a link to delete that teahouse' do
+      visit teahouses_path
+
+      expect(page).to have_link("Delete #{@teahouse1.name}")
+           
+      click_link "Delete #{@teahouse1.name}"
+
+      expect(current_path).to eq(teahouses_path)
+      expect(page).to_not have_content(@teahouse1.name)
+    end
+    # 1-M User Story 22
+    it 'I click on the name of a teahouse anywhere on the site and I go to that Teahouses show page' do
+      visit teahouses_path
+
+      expect(page).to have_link("#{@teahouse1.name}")
+           
+      click_link "#{@teahouse1.name}"
+
+      expect(current_path).to eq(teahouse_path(@teahouse1.id))
+    end
   end
 end

@@ -33,7 +33,7 @@ RSpec.describe BobaTea, type: :model do
   end
   # 1-M User Story 17
   describe 'Sort Teas Alphabetically' do
-    it 'Can sort alphabetical' do
+    it 'Can sort by alph' do
       expect(BobaTea.alpha_sort).to eq([@boba_tea1, @boba_tea2, @boba_tea3])
     end
   end

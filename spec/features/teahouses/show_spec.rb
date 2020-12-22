@@ -44,5 +44,35 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(current_path).to eq(teahouses_path)
       expect(page).to_not have_content(@teahouse1.name)
     end
+        # 1-M User Story 24
+    it 'I visit any page on the site I see a link at the top of the page to the Boba_tea Index' do
+      visit teahouse_path(@teahouse1.id)
+
+      expect(page).to have_link("List of Boba Teas")
+           
+      click_link "List of Boba Teas"
+
+      expect(current_path).to eq(boba_teas_path)
+    end
+    # 1-M User Story 25
+    it 'I visit any page on the site I see a link at the top of the page to the Teahouse Index' do
+      visit teahouse_path(@teahouse1.id)
+
+      expect(page).to have_link("List of Teahouses")
+           
+      click_link "List of Teahouses"
+
+      expect(current_path).to eq(teahouses_path)
+    end
+    # 1-M User Story 26
+    it 'I see a link to take me to their list of boba teas page' do
+      visit teahouse_path(@teahouse1.id)
+
+      expect(page).to have_link("#{@teahouse1.name} Boba Teas")
+           
+      click_link "#{@teahouse1.name} Boba Teas"
+
+      expect(current_path).to eq(teahouse_boba_teas_path(@teahouse1.id))
+    end
   end
 end

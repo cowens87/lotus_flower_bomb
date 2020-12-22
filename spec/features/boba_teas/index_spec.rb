@@ -5,7 +5,7 @@ RSpec.describe 'As a visitor', type: :feature do
     before(:each) do
       @teahouse1    = create(:teahouse)
       @teahouse2    = create(:teahouse)
-      @thai_boba    = create(:boba_tea, name: 'Thai', price: 4.35, teahouse_id: @teahouse1.id)
+      @thai_boba    = create(:boba_tea, name: 'Thai Bay', price: 4.35, teahouse_id: @teahouse1.id)
       @cherry_berry = create(:boba_tea, name: 'Cherry Berry', price: 8.50, caffeinated: false, teahouse_id: @teahouse2.id)
     end
     # 1-M User Story 6
@@ -42,6 +42,42 @@ RSpec.describe 'As a visitor', type: :feature do
 
       expect(page).not_to have_content(@thai_boba.name)
       expect(page).to have_content(@cherry_berry.name)
+    end
+    # 1-M User Story 20
+    it 'Next to every boba tea, I see a link to edit that boba teas info' do
+      visit boba_teas_path
+
+      expect(page).to have_link("Update #{@cherry_berry.name}")
+           
+      click_link "Update #{@cherry_berry.name}"
+
+      expect(current_path).to eq(edit_boba_tea_path(@cherry_berry.id))
+
+      fill_in 'Base:', with: 'Black Tea'
+      click_on 'Submit'
+
+      expect(page).to have_content('Black Tea')
+    end
+    # 1-M User Story 21
+    it 'Next to every boba tea, I see a link to delete that boba tea' do
+      visit boba_teas_path
+
+      expect(page).to have_link("Delete #{@cherry_berry.name}")
+           
+      click_link "Delete #{@cherry_berry.name}"
+
+      expect(current_path).to eq(boba_teas_path)
+      expect(page).to_not have_content(@cherry_berry.name)
+    end
+    # 1-M User Story 23
+    it 'I click on the name of a boba tea anywhere on the site and I go to that boba teas show page' do
+      visit boba_teas_path
+
+      expect(page).to have_link("#{@thai_boba.name}")
+           
+      click_link "#{@thai_boba.name}"
+
+      expect(current_path).to eq(boba_tea_path(@thai_boba.id))
     end
   end 
 end
