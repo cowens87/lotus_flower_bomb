@@ -2,6 +2,10 @@ class TeahousesController < ApplicationController
   def index
     if params[:sort]
       @teahouses = Teahouse.sort_by_tea_count
+    elsif params[:match]
+      @teahouses = Teahouse.exact_match(params[:match])
+    elsif params[:par_match]
+      @teahouses = Teahouse.par_match(params[:par_match])
     else
       @teahouses = Teahouse.all
     end

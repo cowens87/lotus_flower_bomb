@@ -1,4 +1,5 @@
 class TeahouseBobaTeasController < ApplicationController
+  #finds the teas associated to a specific teahouse
   def index
     @teahouse = Teahouse.find(params[:id])
     if params[:sort]

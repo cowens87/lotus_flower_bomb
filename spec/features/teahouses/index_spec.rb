@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'As a visitor', type: :feature do
   describe 'When I visit Teahouses Index Page' do
     before(:each) do
-      @teahouse1    = create(:teahouse)
+      @teahouse1    = create(:teahouse, name: 'Garden Teahouse')
       @teahouse2    = create(:teahouse)
       @thai_boba    = create(:boba_tea, teahouse_id: @teahouse1.id)
       @cherry_berry = create(:boba_tea, teahouse_id: @teahouse2.id)
@@ -87,6 +87,34 @@ RSpec.describe 'As a visitor', type: :feature do
       click_link "#{@teahouse1.name}"
 
       expect(current_path).to eq(teahouse_path(@teahouse1.id))
+    end
+    # 1-M User Story 27
+    it 'I see a text box to filter results by keyword that is an exact match' do
+      visit teahouses_path
+
+      expect(page).to have_content('Exact Match')
+      expect(page).to have_content(@teahouse1.name)
+      expect(page).to have_content(@teahouse2.name)
+           
+      fill_in 'Exact Match', with: @teahouse1.name
+      click_on 'Search'
+
+      expect(page).to have_content(@teahouse1.name)
+      expect(page).to_not have_content(@teahouse2.name)
+    end
+    # 1-M User Story 28
+    it 'I see a text box to filter results by keyword that is an partial match' do
+      visit teahouses_path
+
+      expect(page).to have_content('Partial Match')
+      expect(page).to have_content(@teahouse1.name)
+      expect(page).to have_content(@teahouse2.name)
+           
+      fill_in 'Partial Match', with: 'Garden'
+      click_on 'Search Partial'
+
+      expect(page).to have_content(@teahouse1.name)
+      expect(page).to_not have_content(@teahouse2.name)
     end
   end
 end
