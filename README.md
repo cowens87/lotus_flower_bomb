@@ -30,9 +30,8 @@ You can create as many columns on each table as you would like, but we need a fe
     2. One numeric column
     3. Two DateTime columns
 
-**CRUD Functionality**
-
-### Teahouse
+### CRUD Functionality
+#### Parent/Child
 
 1. [x] done >> User Story 1, Teahouse Index 
 
@@ -141,7 +140,7 @@ the boba_tea is deleted,
 and I am redirected to the boba_tea index page where I no longer see this boba_tea
 CRUD functionality will be reviewed at your first check-in
 
-**ActiveRecord**
+### ActiveRecord
 12. [N/A] done >> User Story 12, Records with a DateTime Column Automatically Sort by the Most Recently Created Records on Their Index Page 
 
 As a visitor
@@ -184,8 +183,7 @@ When I visit the Teahouse's boba_tea Index Page
 Then I see a link to sort boba_tea in alphabetical order
 When I click on the link
 I'm taken back to the Teahouse's boba_tea Index Page where I see all of the teahouses in alphabetical order
-
-**Usability**
+### Usability
 Users should be able to use the site easily. This means making sure there are links/buttons to reach all parts of the site and the styling/layout is sensible.
 
 18. [x] done >> User Story 18, Teahouse Update From Teahouse Index Page 
@@ -251,8 +249,10 @@ When I visit a teahouse show page ('/teahouses/:id')
 Then I see a link to take me to that teahouse's `boba_tea_table_name` page ('/teahouses/:id/boba_tea_table_name')
 Usability functionality will be reviewed at your second check-in
 
-Extensions
-27. [ ] done >> User Story 27, Search by name (exact match)
+### Extensions
+- ONLY COMPLETED THE BELOW ON THE TEAHOUSE INDEX PAGE
+
+27. [x] done >> User Story 27, Search by name (exact match)
 
 As a visitor
 When I visit an index page ('/teahouses') or ('/boba_tea_table_name')
@@ -260,7 +260,7 @@ Then I see a text box to filter results by keyword
 When I type in a keyword that is an exact match of one or more of my records and press the Search button
 Then I only see records that are an exact match returned on the page
 
-28. [ ] done >> User Story 28, Search by name (partial match)
+28. [x] done >> User Story 28, Search by name (partial match)
 
 As a visitor
 When I visit an index page ('/teahouses') or ('/boba_tea_table_name')

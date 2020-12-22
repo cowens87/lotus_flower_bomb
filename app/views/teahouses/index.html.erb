@@ -2,6 +2,16 @@
 
 <%= link_to 'New Teahouse', new_teahouse_path %><br>
 <%= link_to "Sort by Number of Boba Teas", '/teahouses?sort=true', method: :get  %>
+<%= form_tag '/teahouses?match=match', method: :get do %>
+  <%= label_tag :match, 'Exact Match:' %>
+  <%= text_field_tag :match %><br>
+  <%= submit_tag 'Search' %>
+<% end %>
+<%= form_tag '/teahouses?match=par_match', method: :get do %>
+  <%= label_tag :par_match, 'Partial Match:' %>
+  <%= text_field_tag :par_match %><br>
+  <%= submit_tag 'Search Partial' %>
+<% end %>
 
 
 <% @teahouses.each do |teahouse| %>
