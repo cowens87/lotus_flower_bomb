@@ -274,27 +274,27 @@ This functionality should be separate from your exact match functionality.
 ```
 ## Apply for Tea(s)
 
-Visitors to the site will be able to create applications to inquire about Teas. An application has many Teas. Teas can have many applications.
+Visitors to the site will be able to create requests to inquire about Teas. A request has many Teas. Teas can have many requests.
 ```
 ```
-1. [ ] done >> Application Show Page
+1. [x] done >> Request Show Page
 
 As a visitor
-When I visit an applications show page
+When I visit an requests show page
 Then I can see the following:
 - Name of the Applicant
 - Full Address of the Applicant including street address, city, state, and zip code
 - Description of why the applicant says they'd be a good home for this Tea(s)
-- names of all Teas that this application is for (all names of Teas should be links to their show page)
-- The Application's status, either "In Progress", "Pending", "Accepted", or "Rejected"
+- names of all Teas that this request is for (all names of Teas should be links to their show page)
+- The Request's status, either "In Progress", "Pending", "Accepted", or "Rejected"
 
-2.  [ ] done >> Starting an Application
+2. [x] done >> Starting a Request
 
 As a visitor
 When I visit the Tea index page
-Then I see a link to "Start an Application"
+Then I see a link to "Start a Request"
 When I click this link
-Then I am taken to the new application page where I see a form
+Then I am taken to the new request page where I see a form
 When I fill in this form with my:
   - Name
   - Street Address
@@ -303,150 +303,148 @@ When I fill in this form with my:
   - Zip Code
   - Conditions you’d like to heal with the Tea(s)
 And I click submit
-Then I am taken to the new application's show page
+Then I am taken to the new request's show page
 And I see my Name, address information, and description of why I would make a good home
-And I see an indicator that this application is "In Progress"
+And I see an indicator that this request is "In Progress"
 
-3.  [ ] done >>  Starting an Application, Form not Completed
-
+3. [ ] done >>  Starting a Request, Form not Completed
+* HOW DO I TEST THIS
 As a visitor
-When I visit the new application page
+When I visit the new request page
 And I fail to fill in any of the form fields
 And I click submit
-Then I am taken back to the new applications page
+Then I am taken back to the new requests page
 And I see a message that I must fill in those fields.
 
-4.  [ ] done >>  Searching for Teas for an Application
+4. [x] done >>  Searching for Teas for a Request
 
 As a visitor
-When I visit an application's show page
-And that application has not been submitted,
-Then I see a section on the page to "Add a Tea to this Application"
+When I visit a request's show page
+And that request has not been submitted,
+Then I see a section on the page to "Add a Tea to this Request"
 In that section I see an input where I can search for Teas by name
 When I fill in this field with a Tea's name
 And I click submit,
-Then I am taken back to the application show page
+Then I am taken back to the request show page
 And under the search bar I see any Tea whose name matches my search
 
-5.  [ ] done >>  Add a Tea to an Application
+5. [x] done >>  Add a Tea to a Request
 
 As a visitor
-When I visit an application's show page
+When I visit a request's show page
 And I search for a Tea by name
 And I see the names Teas that match my search
 Then next to each Tea's name I see a button to "Inquire about this Tea"
 When I click one of these buttons
-Then I am taken back to the application show page
-And I see the Tea I want to inquire about listed on this application
+Then I am taken back to the request show page
+And I see the Tea I want to inquire about listed on this request
 
-6.  [ ] done >>  Submit an Application
-
-As a visitor
-When I visit an application's show page
-And I have added one or more Teas to the application
-Then I see a section to submit my application
-And in that section I see an input to enter why I would make a good owner for these Tea(s)
-When I fill in that input
-And I click a button to submit this application
-Then I am taken back to the application's show page
-And I see an indicator that the application is "Pending"
-And I see all the Teas that I want to adopt
-And I do not see a section to add more Teas to this application
-
-7.  [ ] done >> No Teas on an Application
+6. [x] done >>  Submit a Request
 
 As a visitor
-When I visit an application's show page
-And I have not added any Teas to the application
-Then I do not see a section to submit my application
+When I visit a request's show page
+And I have added one or more Teas to the request
+Then I see a section to submit my request
+And I click a button to submit this request
+Then I am taken back to the request's show page
+And I see an indicator that the request is "Pending"
+And I see all the Teas that I want to purchase
+And I do not see a section to add more Teas to this request
 
-8.  [ ] done >> Partial Matches for Tea Names
-
-As a visitor
-When I visit an application show page
-And I search for Teas by name
-Then I see any Tea whose name PARTIALLY matches my search
-For example, if I search for "fluff", my search would match Teas with names "fluffy", "fluff", and "mr. fluff"
-
-9.  [ ] done >> Case Insensitive Matches for Tea Names
+7. [x] done >> No Teas on a Request
 
 As a visitor
-When I visit an application show page
-And I search for Teas by name
+When I visit a request's show page
+And I have not added any Teas to the request
+Then I do not see a section to submit my request
+
+8. [X] done >> Partial Matches for Boba_Tea Names
+
+As a visitor
+When I visit a request show page
+And I search for Boba_Teas by name
+Then I see any Boba_Tea whose name PARTIALLY matches my search
+For example, if I search for "fluff", my search will match Boba_Teas with names "fluffy", "fluff", and "mr. fluff"
+
+9.  [ ] done >> Case Insensitive Matches for Boba_Tea Names
+
+As a visitor
+When I visit a request show page
+And I search for Boba_Teas by name
 Then my search is case insensitive
-For example, if I search for "fluff", my search would match Teas with names "Fluffy", "FLUFF", and "Mr. FlUfF"
+For example, if I search for "fluff", my search will match Boba_Teas with names "Fluffy", "FLUFF", and "Mr. FlUfF"
 ```
 ```
-## Approving Applications
+## Approving Requests
 
-Teas on an application can either be accepted or rejected. Once all Teas on an application have been marked either accepted or rejected, then the application is no longer "Pending". If all the Teas were accepted, then the application is "Accepted". If one or more Teas on the application is rejected, then the entire application is "Rejected".
+Teas on a request can either be accepted or rejected. Once all Teas on a request have been marked either accepted or rejected, then the request is no longer "Pending". If all the Teas were accepted, then the request is "Accepted". If one or more Teas on the request is rejected, then the entire request is "Rejected".
 
-For this set of stories, we will be making routes that begin with '/admin'. This is to indicate that only a user with special privileges should be able to accept or reject Teas on an application. Normally, we would want to make sure that a user is logged into an admin account before being able complete any of this workflow, but we will not add any log in or authorization functionality to this project.
+For this set of stories, we will be making routes that begin with '/admin'. This is to indicate that only a user with special privileges should be able to accept or reject Teas on a request. Normally, we would want to make sure that a user is logged into an admin account before being able complete any of this workflow, but we will not add any log in or authorization functionality to this project.
 ```
 ```
 10. [ ] done >> Approving a Tea for Purchase
 
 As a visitor
-When I visit an admin application show page ('/admin/applications/:id')
-For every Tea that the application is for, I see a button to approve the application for that specific Tea
+When I visit an admin request show page ('/admin/requests/:id')
+For every Tea that the request is for, I see a button to approve the request for that specific Tea
 When I click that button
-Then I'm taken back to the admin application show page
-And next to the Tea that I approved, I do not see a button to approve this Tea
-And instead I see an indicator next to the Tea that they have been approved
+Then I'm taken back to the admin request show page
+And next to the Tea that I approved; I do not see a button to approve this Tea
+And instead, I see an indicator next to the Tea that they have been approved
 
 11. [ ] done >> Rejecting a Tea for Purchase
 
 As a visitor
-When I visit an admin application show page ('/admin/applications/:id')
-For every Tea that the application is for, I see a button to reject the application for that specific Tea
+When I visit an admin request show page ('/admin/requests/:id')
+For every Tea that the request is for, I see a button to reject the request for that specific Tea
 When I click that button
-Then I'm taken back to the admin application show page
+Then I'm taken back to the admin request show page
 And next to the Tea that I rejected, I do not see a button to approve or reject this Tea
-And instead I see an indicator next to the Tea that they have been rejected
+And instead, I see an indicator next to the Tea that they have been rejected
 
-12. [ ] done >> Approved/Rejected Teas on one Application do not affect other Applications
-
-As a visitor
-When there are two applications in the system for the same Tea
-When I visit the admin application show page for one of the applications
-And I approve or reject the Tea for that application
-When I visit the other application's admin show page
-Then I do not see that the Tea has been accepted or rejected for that application
-And instead I see buttons to approve or reject the Tea for this specific application
-
-13. [ ] done >>  All Teas Accepted on an Application
+12. [ ] done >> Approved/Rejected Teas on one Request do not affect other Requests
 
 As a visitor
-When I visit an admin application show page
-And I approve all Teas for an application
-Then I am taken back to the admin application show page
-And I see the application's status has changed to "Approved"
+When there are two requests in the system for the same Tea
+When I visit the admin request show page for one of the requests
+And I approve or reject the Tea for that request
+When I visit the other request's admin show page
+Then I do not see that the Tea has been accepted or rejected for that request
+And instead, I see buttons to approve or reject the Tea for this specific request
 
-14. [ ] done >> One or More Teas Rejected on an Application
-
-As a visitor
-When I visit an admin application show page
-And I reject one or more Teas for the application
-And I approve all other Teas on the application
-Then I am taken back to the admin application show page
-And I see the application's status has changed to "Rejected"
-
-15. [ ] done >>  Application Approval makes Teas not purchasable
+13. [ ] done >>  All Teas Accepted on a Request
 
 As a visitor
-When I visit an admin application show page
-And I approve all Teas on the application
+When I visit an admin request show page
+And I approve all Teas for a request
+Then I am taken back to the admin request show page
+And I see the request's status has changed to "Approved"
+
+14. [ ] done >> One or More Teas Rejected on a Request
+
+As a visitor
+When I visit an admin request show page
+And I reject one or more Teas for the request
+And I approve all other Teas on the request
+Then I am taken back to the admin request show page
+And I see the request's status has changed to "Rejected"
+
+15. [ ] done >>  Request Approval makes Teas not purchasable
+
+As a visitor
+When I visit an admin request show page
+And I approve all Teas on the request
 And when I visit the show pages for those Teas
 Then I see that those Teas are no longer "purchasable"
 
-16. [ ] done >>  Teas can only have one approved application on them at any time
+16. [ ] done >>  Teas can only have one approved request on them at any time
 
 As a visitor
-When a Tea has an "Approved" application on them
-And when the Tea has a "Pending" application on them
-And I visit the admin application show page for the pending application
+When a Tea has an "Approved" request on them
+And when the Tea has a "Pending" request on them
+And I visit the admin request show page for the pending request
 Then next to the Tea I do not see a button to approve them
-And instead I see a message that this Tea has been approved for Purchase
+And instead, I see a message that this Tea has been approved for Purchase
 And I do see a button to reject them
 ```
 ```
@@ -480,18 +478,18 @@ NOTE: Your query should only return the necessary data to complete the story
 For the following stories, you should fully leverage ActiveRecord methods in your queries.
 ```
 ```
-19. [ ] done >> Teahouses with Pending Applications
+19. [ ] done >> Teahouses with Pending Requests
 
 As a visitor
 When I visit the admin Teahouse index ('/admin/Teahouses')
-Then I see a section for "Teahouse's with Pending Applications"
-And in this section I see the name of every Teahouse that has a pending application
+Then I see a section for "Teahouse's with Pending Requests"
+And in this section, I see the name of every Teahouse that has a pending request
 
-20. [ ] done >>  Teahouses with Pending Applications Listed Alphabetically
+20. [ ] done >>  Teahouses with Pending Requests Listed Alphabetically
 
 As a visitor
 When I visit the admin Teahouse index ('/admin/Teahouses')
-And I look in the section for Teahouses with pending applications
+And I look in the section for Teahouses with pending requests
 Then I see all those Teahouses are listed alphabetically
 
 21. [ ] done >> Admin Teahouses Show Page Links
@@ -507,23 +505,23 @@ Then I am taken to that Teahouse's admin show page
 As a visitor
 When I visit an admin Teahouse show page
 Then I see a section for statistics
-And in that section I see the average strength of all purchasable Teas for that Teahouse
+And in that section, I see the average strength of all purchasable Teas for that Teahouse
 
 23. [ ] done >> Count of Purchasable Teas
 
 As a visitor
 When I visit an admin Teahouse show page
 Then I see a section for statistics
-And in that section I see the number of Teas at that Teahouse that are purchasable
+And in that section, I see the number of Teas at that Teahouse that are purchasable
 
-24. [ ] done >>  Count of Teas that have been Adopted
+24. [ ] done >>  Count of Teas that have been Purchased
 
 As a visitor
 When I visit an admin Teahouse show page
 Then I see a section for statistics
-And in that section I see the number of Teas that have been adopted from that Teahouse
+And in that section, I see the number of Teas that have been purchased from that Teahouse
 
-Note: A Tea has been adopted from a Teahouse if they are part of an approved application
+Note: A Tea has been purchased from a Teahouse if they are part of an approved request
 ```
 
 ```
@@ -532,14 +530,14 @@ Note: A Tea has been adopted from a Teahouse if they are part of an approved app
 As a visitor
 When I visit an admin Teahouse show page
 Then I see a section titled "Action Required"
-In that section, I see a list of all Teas for this Teahouse that have a pending application and have not yet been marked "approved" or "rejected"
+In that section, I see a list of all Teas for this Teahouse that have a pending request and have not yet been marked "approved" or "rejected"
 
-26. [ ] done >>  Action Required Links to Application Show Page
+26. [ ] done >>  Action Required Links to Request Show Page
 
 As a visitor
 When I visit an admin Teahouse show page
 And I look in the "Action Required" section
-Then next to each Tea's name I see a link to the admin application show page where I can accept or reject the Tea.
+Then next to each Tea's name I see a link to the admin request show page where I can accept or reject the Tea.
 ```
 ```
 ## Extensions
@@ -550,3 +548,6 @@ Then next to each Tea's name I see a link to the admin application show page whe
 ### Styling
 
 Implement a CSS Grid Framework to improve your styling, either [CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) or [Bootstrap](https://getbootstrap.com/)
+
+
+

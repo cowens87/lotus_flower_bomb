@@ -1,0 +1,17 @@
+<h2> Start A Request </h2>
+
+<%= form_tag requests_path do %>
+  <%= label_tag :name, 'Name:' %>
+  <%= text_field_tag :name,  '', :required => true%><br>
+  <%= label_tag :address, 'Street Address: $' %>
+  <%= text_field_tag :address, '', :required => true%><br>
+  <%= label_tag :city, 'City:' %>
+  <%= text_field_tag :city, '', :required => true%><br>
+  <%= label_tag :state, 'State:' %>
+  <%= text_field_tag :state, '', :required => true%><br>
+  <%= label_tag :zip, 'Zip:' %>
+  <%= text_field_tag :zip, '', :required => true%><br>
+  <%= label_tag :reason, 'Reason:' %>
+  <%= text_field_tag :reason, '', :required => true%><br>
+  <%= submit_tag 'Submit' %>
+<% end %>
