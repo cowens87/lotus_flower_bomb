@@ -79,5 +79,32 @@ RSpec.describe 'As a visitor', type: :feature do
 
       expect(current_path).to eq(boba_tea_path(@thai_boba.id))
     end
+    # M-M User Story 2
+    it 'I see the link to start an application' do
+      visit boba_teas_path
+
+      expect(page).to have_link("Start A Request")
+      
+      click_link "Start A Request"
+      
+      expect(current_path).to eq(new_request_path)
+      
+      fill_in 'Name:',           with: 'Nunu Manono'
+      fill_in 'Street Address:', with: '555 W All Tea Way'
+      fill_in 'City:',           with: 'Las Vegas'
+      fill_in 'State:',          with: 'NV'
+      fill_in 'Zip:',            with: '51006'
+      fill_in 'Reason:',         with: 'I want to add more boba flavors to my menu'
+
+      click_on 'Submit'
+
+      request = Request.last
+
+      expect(current_path).to eq(request_path(request.id))
+      expect(page).to have_content(request.name)
+      expect(page).to have_content(request.address)
+      expect(page).to have_content(request.city)
+      expect(request.status).to eq('In Progress')
+    end
   end 
 end

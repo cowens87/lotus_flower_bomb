@@ -17,4 +17,8 @@ class BobaTea < ApplicationRecord
   def self.alpha_sort
     order(:name)
   end
+
+  def self.find_by_name(tea_name)
+    where("lower(name) LIKE ?", "%#{tea_name.downcase}%")
+  end
 end
