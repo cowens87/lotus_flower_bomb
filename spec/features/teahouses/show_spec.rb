@@ -17,33 +17,33 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content(@teahouse1.zip)
     end
     # 1-M User Story 4
-    it 'I see a link to edit the teahouse info and once edited returns to the show page' do
-      visit teahouse_path(@teahouse1.id)
+    # it 'I see a link to edit the teahouse info and once edited returns to the show page' do
+    #   visit teahouse_path(@teahouse1.id)
 
-      expect(page).to have_content(@teahouse1.address)
-      expect(page).to have_link('Update Teahouse')
+    #   expect(page).to have_content(@teahouse1.address)
+    #   expect(page).to have_link('Update Teahouse')
       
-      click_on 'Update Teahouse'
+    #   click_on 'Update Teahouse'
 
-      expect(current_path).to eq(edit_teahouse_path(@teahouse1.id))
+    #   expect(current_path).to eq(edit_teahouse_path(@teahouse1.id))
 
-      fill_in 'Address:', with: "1234 Boba Tea Lane"
-      click_on 'Submit'
+    #   fill_in 'Address:', with: "1234 Boba Tea Lane"
+    #   click_on 'Submit'
 
-      expect(current_path).to eq(teahouse_path(@teahouse1.id))
-      expect(page).to have_content("1234 Boba Tea Lane")
-    end
+    #   expect(current_path).to eq(teahouse_path(@teahouse1.id))
+    #   expect(page).to have_content("1234 Boba Tea Lane")
+    # end
     # 1-M User Story 5
-    it 'I see a link to delete the teahouse and all related chilren, once deleted returns to index page' do
-      visit teahouse_path(@teahouse1.id)
+    # it 'I see a link to delete the teahouse and all related chilren, once deleted returns to index page' do
+    #   visit teahouse_path(@teahouse1.id)
 
-      expect(page).to have_link('Delete Teahouse')
+    #   expect(page).to have_link('Delete Teahouse')
       
-      click_on 'Delete Teahouse'
+    #   click_on 'Delete Teahouse'
 
-      expect(current_path).to eq(teahouses_path)
-      expect(page).to_not have_content(@teahouse1.name)
-    end
+    #   expect(current_path).to eq(teahouses_path)
+    #   expect(page).to_not have_content(@teahouse1.name)
+    # end
         # 1-M User Story 24
     it 'I visit any page on the site I see a link at the top of the page to the Boba_tea Index' do
       visit teahouse_path(@teahouse1.id)

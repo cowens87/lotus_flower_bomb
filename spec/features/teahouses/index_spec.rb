@@ -18,28 +18,27 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content(@teahouse2.name)
     end
     # 1-M User Story 3
-    it 'I see a link to create a new Teahouse, I fill out  a form and return to index page' do
-      visit teahouses_path
+    # it 'I see a link to create a new Teahouse, I fill out  a form and return to index page' do
+    #   visit teahouses_path
       
-      expect(page).to have_link('New Teahouse')
+    #   expect(page).to have_link('New Teahouse')
       
-      click_on 'New Teahouse'
+    #   click_on 'New Teahouse'
 
-      expect(current_path).to eq(new_teahouse_path)
+    #   expect(current_path).to eq(new_teahouse_path)
 
-      fill_in 'Name:', with: "#{@teahouse1.name}"
-      fill_in 'Address:', with: "#{@teahouse1.address}"
-      fill_in 'City:', with: "#{@teahouse1.city}"
-      fill_in 'State:', with: "#{@teahouse1.state}"
-      fill_in 'Zip:', with: @teahouse1.zip
+    #   fill_in 'Name:', with: "#{@teahouse1.name}"
+    #   fill_in 'Address:', with: "#{@teahouse1.address}"
+    #   fill_in 'City:', with: "#{@teahouse1.city}"
+    #   fill_in 'State:', with: "#{@teahouse1.state}"
+    #   fill_in 'Zip:', with: @teahouse1.zip
 
-      click_on 'Create Teahouse'
+    #   click_on 'Create Teahouse'
 
-      expect(current_path).to eq(teahouses_path)
+    #   expect(current_path).to eq(teahouses_path)
 
-      save_and_open_page
-      expect(page).to have_content("#{@teahouse1.name}")
-    end
+    #   expect(page).to have_content("#{@teahouse1.name}")
+    # end
     # 1-M User Story 16
     it 'I see a link to sort teahouses by the number of boba teas they have' do
       visit teahouses_path
@@ -54,20 +53,20 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(@teahouse2.name).to appear_before(@teahouse1.name)
     end
     # 1-M User Story 18
-    it 'Next to every teahouse, I see a link to edit that teahouses info' do
-      visit teahouses_path
+    # it 'Next to every teahouse, I see a link to edit that teahouses info' do
+    #   visit teahouses_path
 
-      expect(page).to have_link("Update #{@teahouse1.name}")
+    #   expect(page).to have_link("Update #{@teahouse1.name}")
            
-      click_link "Update #{@teahouse1.name}"
+    #   click_link "Update #{@teahouse1.name}"
 
-      expect(current_path).to eq(edit_teahouse_path(@teahouse1.id))
+    #   expect(current_path).to eq(edit_teahouse_path(@teahouse1.id))
 
-      fill_in 'Address:', with: "800 S Bubble Tea Way"
-      click_on 'Submit'
+    #   fill_in 'Address:', with: "800 S Bubble Tea Way"
+    #   click_on 'Submit'
 
-      expect(page).to have_content("800 S Bubble Tea Way")
-    end
+    #   expect(page).to have_content("800 S Bubble Tea Way")
+    # end
     # 1-M User Story 19
     it 'Next to every teahouse, I see a link to delete that teahouse' do
       visit teahouses_path
