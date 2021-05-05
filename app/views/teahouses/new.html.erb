@@ -1,16 +1,8 @@
 <h2> Add a New Teahouse </h2>
 
-<%= form_tag teahouses_path do %>
-  <%= label_tag :name, 'Name:' %>
-  <%= text_field_tag :name,  '', :required => true%><br>
-  <%= label_tag :address, 'Address:' %>
-  <%= text_field_tag :address, '', :required => true%><br>
-  <%= label_tag :city, 'City:' %>
-  <%= text_field_tag :city, '', :required => true%><br>
-  <%= label_tag :state, 'State:' %>
-  <%= text_field_tag :state, '', :required => true%><br>
-  <%= label_tag :zip, 'Zip:' %>
-  <%= text_field_tag :zip, '', :required => true%><br>
-  <%= submit_tag 'Create Teahouse' %>
-<% end %>
+<%= render partial: 'form', 
+           locals: {
+             teahouse: @teahouse, 
+             button_text: 'Create Teahouse'
+             } %>
   

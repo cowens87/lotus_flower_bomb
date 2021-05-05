@@ -37,6 +37,7 @@ RSpec.describe 'As a visitor', type: :feature do
 
       expect(current_path).to eq(teahouses_path)
 
+      save_and_open_page
       expect(page).to have_content("#{@teahouse1.name}")
     end
     # 1-M User Story 16

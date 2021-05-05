@@ -37,7 +37,7 @@
     <% @boba_teas.each do |boba_tea| %>
       <section id="boba_tea-<%= boba_tea.id %>">
         <p>Boba Tea Name: <%= boba_tea.name %></p>
-        <%= button_to "Buy Me!", boba_tea_requests_path, method: :post, params: {tea_id: boba_tea.id, rqst_id: @request.id} %>
+        <%= button_to "Buy Me!", request_boba_teas_path(tea_id: boba_tea.id, request_id: @request.id), method: :post, id: 'buy' %>
         <br>
       </section>
     <% end %>

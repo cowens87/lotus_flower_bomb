@@ -16,6 +16,7 @@ class TeahousesController < ApplicationController
   end
 
   def new
+    @teahouse = Teahouse.new
   end
 
   def create
@@ -47,6 +48,6 @@ class TeahousesController < ApplicationController
   private
 
   def teahouse_params
-    params.permit(:name, :address, :city, :state, :zip)
+    params.require[:teahouse].permit(:name, :address, :city, :state, :zip)
   end
 end 
