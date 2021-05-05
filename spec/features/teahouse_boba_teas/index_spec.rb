@@ -13,7 +13,7 @@ RSpec.describe 'As a visitor', type: :feature do
     # 1-M User Story 7
     it 'I see each Boba tea that is associated with that Teahouse with each Boba Teas attributes' do
       visit teahouse_boba_teas_path(@teahouse1.id)
-      
+
       expect(page).to have_content(@thai_boba.name)
       expect(page).to have_content(@thai_boba.price)
       expect(page).to have_content(@thai_boba.base)
@@ -28,7 +28,7 @@ RSpec.describe 'As a visitor', type: :feature do
       
       click_on 'Add Boba Tea'
 
-      expect(current_path).to eq(new_teahouse_boba_teas_path(@teahouse2.id))
+      expect(current_path).to eq(new_teahouse_boba_tea_path(@teahouse2.id))
 
       fill_in 'Name:', with: "Mango-Tango Boba"
       fill_in 'Price:', with: "5.42"
