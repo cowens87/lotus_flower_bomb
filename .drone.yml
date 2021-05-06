@@ -1,0 +1,18 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: test
+  image: ruby:2.5.3
+  commands:
+    - bundle install 
+    - bundle exec rails db:create db:schema:load test
+
+# pipeline:
+#   build:
+#     image: ruby:2.5.3
+#     commands:
+#       - bundle install 
+#       # - rake
+#       - bundle exec rails db:create db:schema:load test
