@@ -7,7 +7,7 @@ steps:
   image: ruby:2.5.3
   commands:
     - bundle install 
-    - bundle exec rails db:create db:schema:load test
+    - bundle exec rake db:create db:schema:load test
 
 # pipeline:
 #   build:
