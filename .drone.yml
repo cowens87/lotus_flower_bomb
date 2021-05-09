@@ -8,7 +8,8 @@ steps:
   environment:
     RAILS_ENV: test
   commands:
-    - bundle install
+    - bundle install --quiet --path build/bundle
+    # - bundle install
     - bundle exec rails db:{create,migrate}
     - bundle exec rspec
 
