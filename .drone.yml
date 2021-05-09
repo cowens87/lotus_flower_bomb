@@ -6,7 +6,7 @@ steps:
 - name: test
   image: ruby:2.5.3
   environment:
-      - RAILS_ENV=test
+    - RAILS_ENV=test
   commands:
     - bundle exec rails db:{create,migrate}
     - bundle exec rspec
