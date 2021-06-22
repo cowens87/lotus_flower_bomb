@@ -1,0 +1,15 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: test
+  image: ruby:2.5.3
+  commands:
+    - bundle install 
+    - rake 
+  environment: 
+    DATABASE_URL: "postgres://postgres@cydnee/lotus_flower_bomb"
+services:
+  - name: cydnee
+    image: postgres:13
