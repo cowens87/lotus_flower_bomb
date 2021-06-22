@@ -5,11 +5,20 @@ name: default
 steps:
 - name: test
   image: ruby:2.5.3
+  environment:
+    RAILS_ENV: test
   commands:
-    - bundle install 
-    - rake 
-  environment: 
-    DATABASE_URL: "postgres://postgres@cydnee/lotus_flower_bomb"
-services:
-  - name: cydnee
-    image: postgres:13
+    - bundle install --quiet --path build/bundle
+    # - bundle install
+    - bundle exec rails db:{create,migrate}
+    - bundle exec rspec
+
+# services:
+#   database:
+#     image: postgres:13
+
+#   environment: 
+#     DATABASE_URL: "postgres://postgres@cydnee/lotus_flower_bomb"
+# services:
+#   - name: cydnee
+#     image: postgres:13
